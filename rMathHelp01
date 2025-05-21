@@ -1,0 +1,33 @@
+"Word problem that feels harder than it likely is.
+Two group, A and B, received a survey asking them to score something from 1-10.
+
+Ten total people responded, and total average score for those 10 combined was 8.5.
+
+Group A had 7 respondents. Their average score was 6.2.
+
+Group B had 3 respondents. What was their average score?"
+r/MathHelp
+genemachine99
+
+[spoiler alert: no solution]
+Let (the average of group A, size 7,) A/7 = 6.2, (the average of group B, size 3,) B/3 = C, (the total average of groups A and B, size 10,) (A+B)/10 = 8.5. We want to find (the average of group B,) C. We are given three equations and three unknowns which--as has already been demonstrated by other posters--can easily be solved by algebraic substitution. So instead, we will proceed with Gauss-Jordan elimination.
+When setting up a matrix, it can be useful for a student new to linear algebra to write the system of equations first. Thus, after solving each equation in terms of a constant we have
+1A + 0B + 0C = 43.4
+0A + 1B - 3C = 0
+1A + 1B + 0C = 85
+
+Which can be written as an augmented matrix like this
+ 1  0  0  43.4
+ 0  1 -3  0
+ 1  1  0  85
+
+And elementary row operations used to find the reduced row echelon form [briefly: 1) rows can be swapped 2) rows can be multiplied by a nonzero real number 3) a multiple of one row can be added to a second with the result replacing the second.]
+
+~
+ 1  0  0  43.4
+ 0  1  0  41.6
+ 0  0  1  13.8666...
+ 
+Thus (the sum of the scores of group) A = 43.4, (the sum of the scores of group) B = 41.6, and (the average of group B,) C = 13.8666...
+
+...Which confirms what other posters in this thread concluded far more succinctly: there is no solution for this problem as worded.
